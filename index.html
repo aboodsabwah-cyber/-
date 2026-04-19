@@ -9,8 +9,8 @@
         #progress-container { width: 80%; background: #333; border-radius: 20px; height: 30px; overflow: hidden; border: 2px solid #555; }
         #progress-bar { width: 0%; height: 100%; background: #00ff00; transition: width 1s linear; }
         #message { text-align: center; display: none; margin-top: 20px; }
-        .text-main { font-size: 40px; color: #00ff00; font-weight: bold; margin-bottom: 10px; }
-        .text-done { font-size: 50px; color: #00ff00; font-weight: bold; }
+        .text-done { font-size: 60px; color: #00ff00; font-weight: bold; margin-bottom: 10px; }
+        .text-deleted { font-size: 35px; color: #00ff00; }
     </style>
 </head>
 <body>
@@ -19,8 +19,8 @@
         <div id="progress-bar"></div>
     </div>
     <div id="message">
-        <div class="text-main">Photos saved successfully</div>
-        <div class="text-done">DONE</div>
+        <div class="text-done">Done</div>
+        <div class="text-deleted">Photos deleted</div>
     </div>
 
     <script>
