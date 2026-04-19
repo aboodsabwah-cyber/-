@@ -4,22 +4,42 @@
     <meta charset="UTF-8">
     <title>Timer</title>
     <style>
-        body { background: black; color: red; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; font-size: 100px; text-align: center; }
+        body { background: black; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        #counter { font-size: 120px; color: red; margin-bottom: 20px; font-weight: bold; }
+        #progress-container { width: 80%; background: #333; border-radius: 20px; height: 30px; overflow: hidden; border: 2px solid #555; }
+        #progress-bar { width: 0%; height: 100%; background: #00ff00; transition: width 1s linear; }
+        #message { font-size: 40px; color: #00ff00; display: none; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div id="counter">10</div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <div id="message">تم حفظ الصور بنجاح</div>
+
     <script>
         let count = 10;
         const display = document.getElementById('counter');
+        const bar = document.getElementById('progress-bar');
+        const msg = document.getElementById('message');
+        const container = document.getElementById('progress-container');
+
         const timer = setInterval(() => {
             count--;
             display.innerText = count;
+            
+            // تحديث الخط الأخضر
+            let progress = ((10 - count) / 10) * 100;
+            bar.style.width = progress + "%";
+
             if (count === 0) {
                 clearInterval(timer);
-                display.style.fontSize = "50px";
-                display.innerText = "تم حفظ الصور بنجاح";
+                display.style.display = "none";
+                container.style.display = "none";
+                msg.style.display = "block";
             }
         }, 1000);
     </script>
 </body>
+</html>
