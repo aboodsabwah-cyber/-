@@ -1,0 +1,21 @@
+!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <style>
+        body { background: black; color: red; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; font-size: 150px; }
+    </style>
+</head>
+<body>
+    <div id="counter">10</div>
+    <script>
+        let count = 10;
+        const display = document.getElementById('counter');
+        const timer = setInterval(() => {
+            count--;
+            display.innerText = count;
+            if (count === 0) clearInterval(timer);
+        }, 1000);
+    </script>
+</body>
