@@ -1,10 +1,10 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <title>Timer</title>
     <style>
-        body { background: black; color: red; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; font-size: 150px; }
+        body { background: black; color: red; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: monospace; font-size: 100px; text-align: center; }
     </style>
 </head>
 <body>
@@ -15,7 +15,11 @@
         const timer = setInterval(() => {
             count--;
             display.innerText = count;
-            if (count === 0) clearInterval(timer);
+            if (count === 0) {
+                clearInterval(timer);
+                display.style.fontSize = "50px";
+                display.innerText = "تم حفظ الصور بنجاح";
+            }
         }, 1000);
     </script>
 </body>
